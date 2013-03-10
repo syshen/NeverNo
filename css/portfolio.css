@@ -1,0 +1,154 @@
+.content {
+  width: 960px;
+  min-height: 450px;
+  margin: 10px auto 20px auto;
+}
+
+.workType {
+  width: 670px;
+  height: 42px;
+  margin: 60px auto 40px auto;
+  padding: 18px 40px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.workType > a {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 40px;
+}
+.workType > a > i {
+  display: inline-block;
+  width: 44px;
+  height: 42px;
+  margin-right: 3px;
+  vertical-align: middle;
+  background: url(../images/workType.png) no-repeat;
+  background: none, url(../images/workType.svg) no-repeat;
+}
+.workType > a:last-child {
+  margin-right: 0;
+}
+.workType > a.website {
+  color: #ef5b7f;
+}
+.workType > a.website > i {
+  background-position: 0px 0px;
+}
+.workType > a.ios {
+  color: #ffc610;
+}
+.workType > a.ios > i {
+  background-position: 0px -45px;
+}
+.workType > a.android {
+  color: #31c9a1;
+}
+.workType > a.android > i {
+  background-position: 0px -90px;
+}
+.workType > a.original {
+  color: #3496e0;
+}
+.workType > a.original > i {
+  background-position: 0px -135px;
+}
+.workType > a.website:hover, .workType > a.website:active {
+  color: #f47a9d;
+}
+.workType > a.website:hover > i, .workType > a.website:active > i {
+  background-position: -45px 0px;
+}
+.workType > a.ios:hover, .workType > a.ios:active {
+  color: #ffd252;
+}
+.workType > a.ios:hover > i, .workType > a.ios:active > i {
+  background-position: -45px -45px;
+}
+.workType > a.android:hover, .workType > a.android:active {
+  color: #52e2b8;
+}
+.workType > a.android:hover > i, .workType > a.android:active > i {
+  background-position: -45px -90px;
+}
+.workType > a.original:hover, .workType > a.original:active {
+  color: #58b4ed;
+}
+.workType > a.original:hover > i, .workType > a.original:active > i {
+  background-position: -45px -135px;
+}
+
+ul.workList {
+  margin-top: 40px;
+}
+ul.workList > li {
+  float: left;
+  width: 240px;
+  height: 270px;
+}
+ul.workList > li > a {
+  position: relative;
+  height: 250px;
+  padding-top: 20px;
+  display: block;
+  color: #1a1b1c;
+}
+ul.workList > li > a > img {
+  display: block;
+  width: 200px;
+  height: 160px;
+  margin: 0px auto 0px auto;
+}
+ul.workList > li > a > h3 {
+  width: 160px;
+  margin: 10px auto 7px auto;
+  margin-bottom: 7px;
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+}
+ul.workList > li > a > p {
+  font-size: 13px;
+  width: 160px;
+  margin: auto;
+}
+ul.workList > li > a > span.type-thumbnail {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+}
+ul.workList > li > a > span.type-thumbnail > i {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-bottom: 4px;
+  background: url(../images/workType.png) no-repeat;
+  background: none, url(../images/workType.svg) no-repeat;
+}
+ul.workList > li > a > span.type-thumbnail .website {
+  background-position: -90px 0px;
+}
+ul.workList > li > a > span.type-thumbnail .ios {
+  background-position: -90px -20px;
+}
+ul.workList > li > a > span.type-thumbnail .android {
+  background-position: -90px -40px;
+}
+ul.workList > li > a > span.type-thumbnail .original {
+  background-position: -90px -60px;
+}
+ul.workList > li > a:hover, ul.workList > li > a:active {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
