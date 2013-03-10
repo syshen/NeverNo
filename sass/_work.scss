@@ -1,0 +1,29 @@
+@import "compass/css3";
+@import "compass/utilities/text/ellipsis";
+
+%text-ellipsis {
+    @include ellipsis($no-wrap: true);
+}
+%icon{
+	display: inline-block;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+}
+@mixin myGradient($direction,$color1,$color2){
+  background-color: $color2;
+  @include background(linear-gradient($direction,$color1, $color2));
+}
+@mixin hiShade($color){
+	@include text-shadow($color -1px -1px 1px);
+}
+@mixin hiLight($color){
+	@include text-shadow($color 1px 1px 1px);
+}
+
+$font-color:#1a1b1c;
+
+.content{
+	width: 960px;
+	min-height: 450px;
+	margin: 10px auto 20px auto;
+}

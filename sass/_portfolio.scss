@@ -1,0 +1,172 @@
+@import "compass/css3";
+@import "compass/utilities/text/ellipsis";
+
+%text-ellipsis {
+    @include ellipsis($no-wrap: true);
+}
+%icon{
+	display: inline-block;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+}
+@mixin myGradient($direction,$color1,$color2){
+  background-color: $color2;
+  @include background(linear-gradient($direction,$color1, $color2));
+}
+@mixin hiShade($color){
+	@include text-shadow($color -1px -1px 1px);
+}
+@mixin hiLight($color){
+	@include text-shadow($color 1px 1px 1px);
+}
+
+$font-color:#1a1b1c;
+
+.content{
+	width: 960px;
+	min-height: 450px;
+	margin: 10px auto 20px auto;
+}
+
+.workType{
+	width: 670px;
+	height: 42px;
+	margin: 60px auto 40px auto;
+	padding: 18px 40px;
+	background-color: white;
+	background-color: rgba(white,0.7);
+	text-align: center;
+	@include border-radius(5px);
+	//@include box-shadow(rgba(black,0.15) 1px 1px 6px);
+	>a{
+		cursor: pointer;
+		display: inline-block;
+		font-size: 22px;
+		margin-right: 40px;
+		>i{
+			display: inline-block;
+			width: 44px;
+			height: 42px;
+			margin-right: 3px;
+			vertical-align: middle;
+			background: url(../images/workType.png) no-repeat;
+			background: none,url(../images/workType.svg) no-repeat;
+		}
+	}
+	>a:last-child{
+		margin-right: 0;
+	}
+	>a.website{
+		color: #ef5b7f;
+		>i{
+			background-position: 0px 0px;
+		}
+	}
+	>a.ios{
+		color: #ffc610;
+		>i{
+			background-position: 0px -45px;
+		}
+	}
+	>a.android{
+		color: #31c9a1;
+		>i{
+			background-position: 0px -90px;
+		}
+	}
+	>a.original{
+		color: #3496e0;
+		>i{
+			background-position: 0px -135px;
+		}
+	}
+	>a.website:hover,>a.website:active{
+		color: #f47a9d;
+		>i{
+			background-position: -45px 0px;
+		}
+	}
+	>a.ios:hover,>a.ios:active{
+		color: #ffd252;
+		>i{
+			background-position: -45px -45px;
+		}
+	}
+	>a.android:hover,>a.android:active{
+		color: #52e2b8;
+		>i{
+			background-position: -45px -90px;
+		}
+	}
+	>a.original:hover,>a.original:active{
+		color: #58b4ed;
+		>i{
+			background-position: -45px -135px;
+		}
+	}
+}
+
+ul.workList{
+	margin-top: 40px;
+	>li{
+		float: left;
+		width: 240px;
+		height: 270px;
+		>a{
+			position: relative;
+			height: 250px;
+			padding-top: 20px;
+			display: block;
+			color: $font-color;
+			>img{
+				display: block;
+				width: 200px;
+				height: 160px;
+				margin: 0px auto 0px auto;
+			}
+			>h3{
+				width: 160px;
+				margin: 10px auto 7px auto;
+				margin-bottom: 7px;
+				font-size: 21px;
+				font-weight: bold;
+				text-align: center;
+			}
+			>p{
+				font-size: 13px;
+				width: 160px;
+				margin: auto;
+			}
+			>span.type-thumbnail{
+				position: absolute;
+				right: 30px;
+				top: 40px;
+				>i{
+					display: block;
+					width: 10px;
+					height: 10px;
+					margin-bottom: 4px;
+					background: url(../images/workType.png) no-repeat;
+					background: none,url(../images/workType.svg) no-repeat;
+				}
+				.website{
+					background-position: -90px 0px;
+				}
+				.ios{
+					background-position: -90px -20px;
+				}
+				.android{
+					background-position: -90px -40px;
+				}
+				.original{
+					background-position: -90px -60px;
+				}
+			}
+
+		}
+		>a:hover,>a:active{
+			background-color: rgba(white,0.5);
+			@include border-radius(5px);
+		}
+	}
+}

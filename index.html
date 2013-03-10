@@ -1,0 +1,105 @@
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Molle:400italic|Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var currentPage=1;
+				$('#block'+currentPage).css('opacity',1);
+				$('.pagination').children('a').on('click',function(){
+					var targetPage=$(this).data('page')
+					$('main-block').find('block').css('z-index',100);
+					$('#block'+$(this).data('page')).css({
+						'z-index':200,
+						'opacity':0
+					});
+					$('#block'+currentPage).animate({
+						opacity:'0'
+					});	
+					$('#block'+targetPage).animate({
+						opacity:'1'
+					},function(){
+						$('#block'+currentPage).css('z-index',100);
+						$(this).css('z-index',120);
+						currentPage=targetPage;
+					});	
+				});
+			});
+		</script>
+	</head>
+	<body>
+			<div class="main-block">
+				<div class="main-block-innerWrapper">
+					<h1><img src="images/LOGO.png"></h1>
+				</div>
+				<div id="block4" class="block" style="background-image:url(images/back4.png);">
+					<div class="content">
+						<h2 style="top:210px; left:100px">because your family <br>does case</h2>
+						<img src="images/block4.png" style="right:100px; top:10px;">
+					</div>
+				</div>
+				<div id="block3" class="block" style="background-image:url(images/back3.png);">
+					<div class="content">
+						<h2 style="top:210px; left:100px">we help connect <br> your family</h2>
+					</div>
+				</div>
+				<div id="block2" class="block" style="background-image:url(images/back2.jpg);">
+					<div class="content">
+						<h2 style="top:210px; left:100px">we see your smile</h2>
+					</div>
+				</div>
+				<div id="block1" class="block" style="background-image:url(images/back1.jpg);">
+					<div class="content">
+						<h2 style="top:210px; left:100px">we know how you <br>feel everyday</h2>
+						<img src="images/product.png" style="right:100px; top:150px;">
+					</div>
+				</div>
+					<div class="pagination">
+						<a data-page="1"></a>
+						<a data-page="2"></a>
+						<a data-page="3"></a>
+						<a data-page="4"></a>
+					</div>
+			</div>
+			<div class="featureWrapper featureWrapper1">
+				<div class="featureA">
+					<h3 style="margin-top:50px; margin-left:100px">Stylish Degin</h3>
+					<p style="margin-top:30px; margin-left:100px; margin-bottom:50px">It is with gorgeous, stylish design. It silently detects how you feel when you stand in front of it and instantly shows your feeling with an enjoy feedbacks</p>
+					<img src="images/feature1.png" style="top:30px; right:110px; ">
+				</div>
+			</div>
+			<div class="featureWrapper featureWrapper2">
+				<div class="featureB">
+					<h3 style="margin-top:100px; right:-500px">Easy Installation</h3>
+					<p style="margin-top:30px; right:-500px">It can be attached on any surface. Just install it on a place which most family members would stand in front of it for a moment, like a mirror.</p>
+				</div>
+			</div>
+			<div class="featureWrapper featureWrapper3">
+				<div class="featureA">
+					<h3 style="margin-top:100px; margin-left:50px">Any Time and Anywhere<br>iCare, you care</h3>
+					<p style="margin-top:30px; margin-left:50px">The App supports to link family emotions, and group discuss to show your careness.</p>
+					<img src="images/feature3.png" style="top:-28px; right:0px; width:450px;">
+				</div>
+			</div>
+			<div class="featureWrapper featureWrapper4">
+				<div class="app">
+					<h3 style="top:200px; left:100px">app features</h3>
+					<ul style="top:280px; left:135px">
+						<li>daily feeling tracing</li>
+						<li>to person conversation</li>
+						<li>facial expression recogrnition</li>
+                                                <li>iOS / Android</li>
+					</ul>
+					<div class="iphone" style="top:50px; right:100px;">
+						<video class="screen" autoplay="true" loop="true" preload="" controls="controls"> 
+				            <source src="video.mp4" type="video/mp4">
+				            <source src="video.webm" type="video/webm">
+			            </video>
+					</div>
+					<div class="getApp" style="top:450px; left:100px;"></div>
+				</div>
+			</div>
+	</body>
+</html>

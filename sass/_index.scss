@@ -1,0 +1,146 @@
+@import "compass/css3";
+@import	"index/*.png";
+@import	"index-retina/*.png";
+
+@mixin set-index-retina{	
+	background: url('../images/index-retina.png') no-repeat;
+	background-size: 100%;
+}
+
+.index-main{
+	position: relative;
+	margin-top: 25px;
+	width: 980px;
+	height: 420px;
+	.sliderWrapper{
+		width: 980px;
+		height: 420px;
+		overflow: hidden;
+	}
+	.next, .prev{
+		position: absolute;
+		top: 210px;
+		margin-top: -26px;
+		display: inline-block;
+		width: 52px;
+		height: 52px;
+	}
+	.next{
+		right: -5px;
+		@include index-sprite(bannerRoller-right);
+	}
+	.prev{
+		left: -5px;
+		@include index-sprite(bannerRoller-left);
+	}
+	.pagination{
+		position: relative;
+		top: -30px;
+		text-align: center;
+		>a{
+			display: inline-block;
+			width: 7px;
+			height: 7px;
+			margin: 0 3px;
+			@include border-radius(4px);
+			background-color: #6cb8ea;
+			border: 1px solid #4aa8d1;
+		}
+		>a.active{
+			background-color: #fee952;
+			border: 1px solid #fcdb54;
+		}
+	}
+}
+ul.index-itemBlock{
+	margin-bottom: 80px;
+	margin-top: 15px;
+	>li{
+		width: 33.33%;
+		float: left;
+		text-align: center;
+		font-size: 36px;
+		font-weight: bold;
+		letter-spacing: 17px;
+		>a{
+			position: relative;
+			display: block;
+			color: #1a1b1c;
+			@include transition-property(top);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease-in);
+			>span{
+				z-index: 0;
+				position: absolute;
+				top: 20px;
+				@include box-sizing(border-box);
+				width: 100%;
+				height: 200px;
+				border-right: 1px solid #c3cdda;
+				border-left: 1px solid white;
+				@include transition-property(top);
+				@include transition-duration(0.1s);
+				@include transition-timing-function(ease-in);
+			}
+			>i{
+				display: block;
+				width: 230px;
+				height: 195px;
+				margin: auto;
+				background-repeat: no-repeat;
+			}
+			.about{
+				@include index-sprite(index-about)
+			}
+			.portfolio{
+				@include index-sprite(index-portfolio);
+			}
+			.job{
+				@include index-sprite(index-job);
+			}
+		}
+		>a:hover{
+			top: -3px;
+			>span{
+				top:23px;
+			}
+		}
+		>a:active{
+			top: 5px;
+			>span{
+				top:15px;
+			}
+		}
+	}
+	>li:first-child >a >span{
+		border-left: 0;
+	}
+	>li:last-child >a >span{
+		border-right: 0;
+	}
+}
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) {
+
+ul.index-itemBlock{
+	>li{
+		>a{
+			.about{
+				@include index-retina-sprite(index-about);
+				@include set-index-retina;
+			}
+			.portfolio{
+				@include index-retina-sprite(index-portfolio);
+				@include set-index-retina;
+			}
+			.job{
+				@include index-retina-sprite(index-job);
+				@include set-index-retina;
+			}
+		}
+	}
+}
+
+}
